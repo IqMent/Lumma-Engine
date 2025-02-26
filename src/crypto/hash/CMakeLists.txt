@@ -1,0 +1,4 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 3.10)
+project(EngineHash)
+
+SRC(Hash.cpp)
