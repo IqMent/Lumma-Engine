@@ -1,0 +1,3 @@
+/Users/igorsergeevic/Desktop/LummaEngine/src/cmake-build-debug/CMakeFiles/LummaEngine.dir
+/Users/igorsergeevic/Desktop/LummaEngine/src/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/igorsergeevic/Desktop/LummaEngine/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
