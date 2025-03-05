@@ -5,12 +5,9 @@
 #ifndef LUMMAENGINE_LSPACECONFIG_HPP
 #define LUMMAENGINE_LSPACECONFIG_HPP
 
-
-
 class LspaceConfig {
 
 };
-
 
 
 #endif //LUMMAENGINE_LSPACECONFIG_HPP

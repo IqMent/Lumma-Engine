@@ -4,8 +4,8 @@
 
 #ifndef LUMMAENGINE_CRYPTO_HPP
 #define LUMMAENGINE_CRYPTO_HPP
-
 #include <openssl/sha.h>
 
+#include <sodium/ed>
 
 #endif //LUMMAENGINE_CRYPTO_HPP

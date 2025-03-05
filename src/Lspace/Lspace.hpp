@@ -6,11 +6,9 @@
 #define LUMMAENGINE_LSPACE_HPP
 
 
-
 class Lspace {
 
 };
-
 
 
 #endif //LUMMAENGINE_LSPACE_HPP
