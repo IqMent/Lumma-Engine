@@ -16,7 +16,8 @@ set(SRC
         node/dns/dns_node.h
         node/node.h
         crypto/key/key.h
-        crypto/signature/signature.h)
+        crypto/signature/signature.h
+        bench/sign_transaction.cpp)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 #    set(SODIUM_ROOT_DIR "/usr/local/opt/libsodium")
