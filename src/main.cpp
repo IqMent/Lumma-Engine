@@ -4,14 +4,11 @@
 #include <iostream>
 #include <string>
 #include <sodium.h>
+#include <cassert>
 
-//int main(){
-//    std::cout << "Hello, world!" << std::endl;
-//    return 0;
-//}
 int main(void)
 {
-    if (sodium_init() < 0) {
-    }
+
     return 0;
 }
+
