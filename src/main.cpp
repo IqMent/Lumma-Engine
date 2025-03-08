@@ -8,7 +8,7 @@
 
 int main(void)
 {
-
+    sodium_init();
     return 0;
 }
 
