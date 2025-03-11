@@ -26,7 +26,19 @@ set(SRC
         cfg/config_manager.h
         cfg/init.h
         requests/requests.h
-        requests/price/price.h)
+        requests/price/price.h
+        hex.h
+        base64.h
+        base58.h
+        crypto/key/secp256k1.h
+        crypto/key/eddsa25519.h
+        crypto/key/secp256k1_recovery.h
+        crypto/hash/sha512/sha512.h
+        crypto/hash/sha256/sha256.h
+        crypto/hash/ripemd160/ripemd160.h
+        crypto/hash/keccak256/keccak256.h
+        crypto/hash/blake2b/blake2b.h
+)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 #    set(SODIUM_ROOT_DIR "/usr/local/opt/libsodium")

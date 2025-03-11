@@ -5,4 +5,11 @@
 #ifndef LUMMAENGINE_KEY_H
 #define LUMMAENGINE_KEY_H
 
+
+namespace Crypto{
+    class KeyPair{
+
+    };
+}
+
 #endif //LUMMAENGINE_KEY_H
