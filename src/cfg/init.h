@@ -11,6 +11,8 @@
 bool init_config();
 bool init_config_path();
 
+void reboot();
+
 
 
 #endif //LUMMAENGINE_INIT_H

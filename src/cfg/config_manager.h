@@ -10,10 +10,13 @@
 #include <filesystem>
 #include <fstream>
 #include "init.h"
+#include <string>
 
 class ConfigManager{
 private:
-
+    std::string cgf_path;
+public:
+    bool save_cfg_local();
 };
 
 #endif //LUMMAENGINE_CONFIG_MANAGER_H
