@@ -5,10 +5,12 @@
 #ifndef LUMMAENGINE_NODE_H
 #define LUMMAENGINE_NODE_H
 
-namespace Node{
-    class Node{
+#include <string>
 
-    };
-}
+class Node{
+protected:
+    std::string node_address;
+    std::string node_port;
+};
 
 #endif //LUMMAENGINE_NODE_H
