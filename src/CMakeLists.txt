@@ -21,7 +21,10 @@ set(SRC
         network/Network.cpp
         network/Network.h
         PoS/validator.h
-        PoW/miner.h)
+        PoW/miner.h
+        transaction/transaction.h
+        cfg/config_manager.h
+        cfg/init.h)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 #    set(SODIUM_ROOT_DIR "/usr/local/opt/libsodium")

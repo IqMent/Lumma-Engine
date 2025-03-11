@@ -11,6 +11,9 @@ class Node{
 protected:
     std::string node_address;
     std::string node_port;
+
+    size_t get_current_level();
+
 };
 
 #endif //LUMMAENGINE_NODE_H
