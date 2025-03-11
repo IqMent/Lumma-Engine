@@ -38,6 +38,7 @@ set(SRC
         crypto/hash/ripemd160/ripemd160.h
         crypto/hash/keccak256/keccak256.h
         crypto/hash/blake2b/blake2b.h
+        crypto/hash/hash.cpp
 )
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
