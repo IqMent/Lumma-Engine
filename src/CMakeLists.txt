@@ -39,6 +39,10 @@ set(SRC
         crypto/hash/keccak256/keccak256.h
         crypto/hash/blake2b/blake2b.h
         crypto/hash/hash.cpp
+        Lspace/upload/upload.h
+        Lspace/pull/pull.h
+        Lspace/fork/fork.h
+        Lspace/getter/getter.h
 )
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
