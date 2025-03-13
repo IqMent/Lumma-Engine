@@ -6,7 +6,7 @@ set(SRC
 )
 
 add_subdirectory(crypto/)
-
+set(CMAKE_CXX_STANDARD 17)
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 #    set(SODIUM_ROOT_DIR "/usr/local/opt/libsodium")
 #    set(CMAKE_PREFIX_PATH ${SODIUM_ROOT_DIR})

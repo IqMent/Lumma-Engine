@@ -1,9 +1,22 @@
 //
-// Created by iqment on 3/11/25.
+// Created by iqment on 3/14/25.
 //
 
 #ifndef LUMMAENGINE_SHA512_H
 #define LUMMAENGINE_SHA512_H
+
+#include <vector>
+#include <string>
+#include <cstdint>
+
+namespace Crypto{
+    class SHA512{
+    public:
+        std::vector<uint8_t> make_sha512(std::string *data);
+    };
+}
+
+extern "C"{
 #include <stddef.h>
 
 #include "fixedint.h"
@@ -20,5 +33,5 @@ int sha512_init(sha512_context * md);
 int sha512_final(sha512_context * md, unsigned char *out);
 int sha512_update(sha512_context * md, const unsigned char *in, size_t inlen);
 int sha512(const unsigned char *message, size_t message_len, unsigned char *out);
-
+}
 #endif //LUMMAENGINE_SHA512_H

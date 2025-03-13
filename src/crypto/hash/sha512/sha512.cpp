@@ -9,10 +9,9 @@
  * Tom St Denis, tomstdenis@gmail.com, http://libtom.org
  */
 
-extern "C"{
+
 #include "fixedint.h"
 #include "sha512.h"
-
 /* the K array */
 static const uint64_t K[80] = {
         UINT64_C(0x428a2f98d728ae22), UINT64_C(0x7137449123ef65cd),
@@ -273,5 +272,4 @@ int sha512(const unsigned char *message, size_t message_len, unsigned char *out)
     if ((ret = sha512_update(&ctx, message, message_len))) return ret;
     if ((ret = sha512_final(&ctx, out))) return ret;
     return 0;
-}
 }
