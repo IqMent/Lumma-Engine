@@ -37,7 +37,7 @@ void sha256_final(SHA256_CTX *ctx, BYTE hash[]);
 
 namespace Crypto{
     class SHA256{
-    public:
+        public:
         std::vector<u_int8_t> make_sha256(std::string *data);
         std::vector<u_int8_t> *make_sha256(std::vector<u_int8_t> *data);
         std::vector<u_int8_t> *make_sha256(unsigned long long data);

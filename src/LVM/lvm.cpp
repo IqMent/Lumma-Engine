@@ -32,9 +32,9 @@ public:
     }
 };
 
-int main() {
-    VirtualMachine vm;
-    std::vector<int> bytecode = {1, 1, 2, 2};
-    vm.execute(bytecode);
-    return 0;
-}
+//int main() {
+//    VirtualMachine vm;
+//    std::vector<int> bytecode = {1, 1, 2, 2};
+//    vm.execute(bytecode);
+//    return 0;
+//}

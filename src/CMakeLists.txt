@@ -3,48 +3,9 @@ project(LummaEngine)
 
 set(SRC
         main.cpp
-        block/finder/finder.hpp
-        LVM/lvm.cpp
-        LVM/lvm.h
-        address/address.cpp
-        address/address.h
-        utils/utils.h
-        utils/convertor/binary_convertor.cpp
-        wallet/wallet.h
-        smart_contract/sc.h
-        node/dns/dns_node.cpp
-        node/dns/dns_node.h
-        node/node.h
-        crypto/key/key.h
-        crypto/signature/signature.h
-        bench/sign_transaction.cpp
-        network/Network.cpp
-        network/Network.h
-        PoS/validator.h
-        PoW/miner.h
-        transaction/transaction.h
-        cfg/config_manager.h
-        cfg/init.h
-        requests/requests.h
-        requests/price/price.h
-        hex.h
-        base64.h
-        base58.h
-        crypto/key/secp256k1.h
-        crypto/key/eddsa25519.h
-        crypto/key/secp256k1_recovery.h
-        crypto/hash/sha512/sha512.h
-        crypto/hash/sha256/sha256.h
-        crypto/hash/ripemd160/ripemd160.h
-        crypto/hash/keccak256/keccak256.h
-        crypto/hash/blake2b/blake2b.h
-        crypto/hash/hash.cpp
-        Lspace/upload/upload.h
-        Lspace/pull/pull.h
-        Lspace/fork/fork.h
-        Lspace/getter/getter.h
-        crypto/hash/sha256/sha256.cpp
 )
+
+add_subdirectory(crypto/)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 #    set(SODIUM_ROOT_DIR "/usr/local/opt/libsodium")
@@ -80,7 +41,8 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     add_executable(${PROJECT_NAME} ${SRC})
     #target_link_directories(${PROJECT_NAME} PRIVATE ${SODIUM_DIR})
     target_include_directories(${PROJECT_NAME} PRIVATE ${SODIUM_DIR})
-    target_link_libraries(${PROJECT_NAME} OpenSSL::Crypto "/usr/local/lib/libsodium.a")
+    target_link_libraries(${PROJECT_NAME} OpenSSL::Crypto LummaEngineHash "/usr/local/lib/libsodium.a")
+    #target_link_libraries(LummaEngineHash)
 
 endif ()
 
