@@ -43,6 +43,7 @@ set(SRC
         Lspace/pull/pull.h
         Lspace/fork/fork.h
         Lspace/getter/getter.h
+        crypto/hash/sha256/sha256.cpp
 )
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")

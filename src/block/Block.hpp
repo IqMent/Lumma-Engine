@@ -17,6 +17,7 @@ namespace Block{
     class Block{
     public:
         Block(unsigned long index, std::vector<uint8_t> block_hash, std::vector<uint8_t> previous_hash,
+              std::vector<uint8_t> merkle_three_hash,
               std::vector<uint8_t> sender, std::vector<uint8_t> receiver, unsigned long long value,
               std::vector<uint8_t> message, uint64_t timestamp);
         ~Block();
