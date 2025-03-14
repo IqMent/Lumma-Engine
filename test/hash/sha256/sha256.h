@@ -9,6 +9,7 @@
 #ifndef SHA256_H
 #define SHA256_H
 
+
 extern "C" {
 /*************************** HEADER FILES ***************************/
 #include <stddef.h>
