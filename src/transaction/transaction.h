@@ -14,12 +14,12 @@
 
 class Transaction{
 private:
+    unsigned short version;
     std::vector<u_int8_t> sender;
     std::vector<u_int8_t> receiver;
     std::vector<u_int8_t> signature;
     unsigned long long value;
     unsigned long nonce;
-    unsigned long long timestamp;
     std::vector<uint8_t> message;
 public:
     Transaction(std::vector<u_int8_t> sender, std::vector<u_int8_t> receiver, unsigned long long value,

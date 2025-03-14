@@ -15,6 +15,12 @@ set(SRC
         block/block_header.h
         leveldb/leveldb_api.cpp
         leveldb/leveldb_api.h
+        block/genesis_block.h
+        transaction/ed25519_trx/transaction_ed25519.h
+        network/ws/WebSocket.cpp
+        network/ws/WebSocket.h
+        network/http/HTTP.cpp
+        network/http/HTTP.h
 )
 
 add_subdirectory(crypto/)

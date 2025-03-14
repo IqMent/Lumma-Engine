@@ -18,11 +18,9 @@ namespace Block{
     class block{
     private:
         BlockHeader* bh;
-        std::vector<uint8_t> previous_hash;
-        std::vector<uint8_t> merkle_three_hash;
+        unsigned short trx_count;
         CoinBaseTrx *cb_trx;
         std::vector<Transaction *> trxs;
-        unsigned long long timestamp;
     public:
         block(unsigned long index, std::vector<uint8_t> block_hash, std::vector<uint8_t> previous_hash,
               std::vector<uint8_t> merkle_three_hash, std::vector<Transaction *> trxs, unsigned long long timestamp);

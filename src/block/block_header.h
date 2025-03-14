@@ -11,6 +11,7 @@
 class BlockHeader{
 private:
     unsigned short version;
+    unsigned long long block_number;
     std::vector<u_int8_t> previous_hash;
     std::vector<u_int8_t> merkle_hash;
     unsigned long long timestamp;

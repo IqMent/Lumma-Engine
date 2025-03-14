@@ -12,7 +12,6 @@ Transaction::Transaction(std::vector<u_int8_t> sender, std::vector<u_int8_t> rec
     this->message = message;
     this->signature = signature;
     this->nonce = nonce;
-    this->timestamp = timestamp;
 }
 
 Transaction *
