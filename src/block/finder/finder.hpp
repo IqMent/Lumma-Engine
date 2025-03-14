@@ -5,7 +5,7 @@
 #ifndef LUMMAENGINE_FINDER_HPP
 #define LUMMAENGINE_FINDER_HPP
 
-#include "../Block.hpp"
+#include "../block.hpp"
 
 namespace Block{
     class BlockFinder: protected Block::Block{

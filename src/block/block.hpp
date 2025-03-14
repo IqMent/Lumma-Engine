@@ -5,8 +5,6 @@
 #ifndef LUMMAENGINE_BLOCK_HPP
 #define LUMMAENGINE_BLOCK_HPP
 
-#include <iostream>
-#include <fstream>
 #include <memory>
 #include <string>
 #include <cstdint>
@@ -16,11 +14,18 @@
 #include "../transaction/transaction.h"
 
 namespace Block{
-    class Block: protected Transaction{
+    class block{
+    private:
+        unsigned long index;
+        std::vector<uint8_t> block_hash;
+        std::vector<uint8_t> previous_hash;
+        std::vector<uint8_t> merkle_three_hash;
+        std::vector<Transaction *> trxs;
+        unsigned long long timestamp;
     public:
-        Block(unsigned long index, std::vector<uint8_t> block_hash, std::vector<uint8_t> previous_hash,
+        block(unsigned long index, std::vector<uint8_t> block_hash, std::vector<uint8_t> previous_hash,
               std::vector<uint8_t> merkle_three_hash, std::vector<Transaction *> trxs, unsigned long long timestamp);
-        ~Block();
+        ~block();
     protected:
         unsigned long get_index();
         std::vector<uint8_t> get_block_hash();
@@ -29,6 +34,12 @@ namespace Block{
         std::vector<Transaction *> get_trxs();
         std::vector<Transaction *> get_trx(std::vector<uint8_t> uni_data, std::string data);
         uint64_t get_timestamp();
+    };
+}
+
+namespace Block{
+    class BlockValidate{
+        bool validate_block(block *block);
     };
 }
 

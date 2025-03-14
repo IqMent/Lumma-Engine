@@ -9,7 +9,7 @@
 
 
 #include "../node/node.h"
-#include "../block/Block.hpp"
+#include "../block/block.hpp"
 #include <sodium.h>
 #include <sodium/crypto_sign_ed25519.h>
 #include <sodium/crypto_core_ed25519.h>

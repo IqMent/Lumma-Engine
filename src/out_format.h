@@ -5,7 +5,7 @@
 #ifndef LUMMAENGINE_OUT_FORMAT_H
 #define LUMMAENGINE_OUT_FORMAT_H
 
-#include "block/Block.hpp"
+#include "block/block.hpp"
 #include "hex.h"
 #include "base58.h"
 #include "base64.h"
@@ -14,9 +14,9 @@
 
 
 namespace Out_format{
-class BlockPrint: protected Block::Block{
+class BlockPrint: protected block::block{
     public:
-        void print_block(Block *block);
+        void print_block(block *block);
 
     };
 
