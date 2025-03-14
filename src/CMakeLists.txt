@@ -11,6 +11,10 @@ set(SRC
         transaction/validate_transaction.cpp
         transaction/secp256k1_trx/transaction_secp256k1.h
         transaction/verify_transaction.cpp
+        transaction/coinbase_transaction.h
+        block/block_header.h
+        leveldb/leveldb_api.cpp
+        leveldb/leveldb_api.h
 )
 
 add_subdirectory(crypto/)

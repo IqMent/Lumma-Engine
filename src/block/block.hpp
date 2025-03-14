@@ -12,14 +12,15 @@
 #include <ctime>
 
 #include "../transaction/transaction.h"
-
+#include "../transaction/coinbase_transaction.h"
+#include "block_header.h"
 namespace Block{
     class block{
     private:
-        unsigned long index;
-        std::vector<uint8_t> block_hash;
+        BlockHeader* bh;
         std::vector<uint8_t> previous_hash;
         std::vector<uint8_t> merkle_three_hash;
+        CoinBaseTrx *cb_trx;
         std::vector<Transaction *> trxs;
         unsigned long long timestamp;
     public:

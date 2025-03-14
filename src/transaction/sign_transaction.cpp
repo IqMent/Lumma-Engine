@@ -10,5 +10,5 @@
 
 
 std::vector<uint8_t> Transaction::sign_transaction(std::vector<uint8_t> message, std::vector<uint8_t> priv_key) {
-
+    
 }
