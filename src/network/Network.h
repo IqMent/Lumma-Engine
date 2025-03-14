@@ -18,12 +18,4 @@
 #include <mutex>
 #include <thread>
 
-extern "C"{
-#include <netinet/in.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stddef.h>
-#include <limits.h>
-};
-
 #endif //LUMMAENGINE_NETWORK_H

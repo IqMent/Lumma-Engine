@@ -21,6 +21,7 @@ set(SRC
         network/ws/WebSocket.h
         network/http/HTTP.cpp
         network/http/HTTP.h
+        logger/logger.h
 )
 
 add_subdirectory(crypto/)
