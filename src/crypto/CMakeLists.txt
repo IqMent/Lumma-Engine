@@ -3,3 +3,4 @@ project(LummaEngineCrypto)
 
 
 add_subdirectory(hash)
+add_subdirectory(key)

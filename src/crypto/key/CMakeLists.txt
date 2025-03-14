@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(LummaEngineKey)
+project(LummaEngineKeyED25519)
 
 set(SRC
         ed25519/add_scalar.c
@@ -13,5 +13,6 @@ set(SRC
         ed25519/sign.c
         ed25519/verify.c
 )
+add_subdirectory(secp256k1)
 
 add_library(${PROJECT_NAME} ${SRC})

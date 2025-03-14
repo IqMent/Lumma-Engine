@@ -13,22 +13,21 @@
 #include <vector>
 #include <ctime>
 
+#include "../transaction/transaction.h"
+
 namespace Block{
-    class Block{
+    class Block: protected Transaction{
     public:
         Block(unsigned long index, std::vector<uint8_t> block_hash, std::vector<uint8_t> previous_hash,
-              std::vector<uint8_t> merkle_three_hash,
-              std::vector<uint8_t> sender, std::vector<uint8_t> receiver, unsigned long long value,
-              std::vector<uint8_t> message, uint64_t timestamp);
+              std::vector<uint8_t> merkle_three_hash, std::vector<Transaction *> trxs, unsigned long long timestamp);
         ~Block();
     protected:
         unsigned long get_index();
         std::vector<uint8_t> get_block_hash();
         std::vector<uint8_t> get_previous_hash();
-        std::vector<uint8_t> get_sender();
-        std::vector<uint8_t> get_receiver();
-        unsigned long long get_value();
-        std::vector<uint8_t> get_message();
+        std::vector<uint8_t> get_merkle_three_hash();
+        std::vector<Transaction *> get_trxs();
+        std::vector<Transaction *> get_trx(std::vector<uint8_t> uni_data, std::string data);
         uint64_t get_timestamp();
     };
 }

@@ -3,6 +3,9 @@ project(LummaEngine)
 
 set(SRC
         main.cpp
+        out_format.h
+        block/shasum/shasum.cpp
+        block/shasum/shasum.h
 )
 
 add_subdirectory(crypto/)
@@ -41,7 +44,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     add_executable(${PROJECT_NAME} ${SRC})
     #target_link_directories(${PROJECT_NAME} PRIVATE ${SODIUM_DIR})
     target_include_directories(${PROJECT_NAME} PRIVATE ${SODIUM_DIR})
-    target_link_libraries(${PROJECT_NAME} OpenSSL::Crypto LummaEngineHash "/usr/local/lib/libsodium.a")
+    target_link_libraries(${PROJECT_NAME} OpenSSL::Crypto LummaEngineHash secp256k1 LummaEngineKeyED25519 "/usr/local/lib/libsodium.a")
     #target_link_libraries(LummaEngineHash)
 
 endif ()

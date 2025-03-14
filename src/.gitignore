@@ -1,0 +1,5 @@
+build
+build/*
+
+src/crypto/key/secp256k1/build
+src/crypto/key/secp256k1/build/*

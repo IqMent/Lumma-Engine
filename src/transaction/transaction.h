@@ -22,12 +22,12 @@ private:
     unsigned long long timestamp;
     std::vector<uint8_t> message;
 public:
-    Transaction(std::vector<u_int8_t> sender, std::vector<u_int8_t> receiver, std::vector<u_int8_t> signature,unsigned long long value,
-    unsigned long nonce,
-    unsigned long long timestamp,
-    std::vector<uint8_t> message);
+    Transaction(std::vector<u_int8_t> sender, std::vector<u_int8_t> receiver, unsigned long long value,
+                std::vector<uint8_t> message, std::vector<u_int8_t> signature, unsigned long nonce,
+                unsigned long long timestamp);
     ~Transaction();
     //Getter's
+protected:
     std::vector<u_int8_t> get_sender();
     std::vector<u_int8_t> get_receiver();
     std::vector<u_int8_t> get_signature();
@@ -35,11 +35,6 @@ public:
     unsigned long get_nonce();
     unsigned long long get_timestamp();
     std::vector<uint8_t> get_message();
-
-
-
-
-
 };
 
 #endif //LUMMAENGINE_TRANSACTION_H
