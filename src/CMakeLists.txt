@@ -6,6 +6,11 @@ set(SRC
         out_format.h
         block/shasum/shasum.cpp
         block/shasum/shasum.h
+        transaction/make_transaction.cpp
+        transaction/sign_transaction.cpp
+        transaction/validate_transaction.cpp
+        transaction/secp256k1_trx/transaction_secp256k1.h
+        transaction/verify_transaction.cpp
 )
 
 add_subdirectory(crypto/)

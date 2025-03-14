@@ -26,6 +26,11 @@ public:
                 std::vector<uint8_t> message, std::vector<u_int8_t> signature, unsigned long nonce,
                 unsigned long long timestamp);
     ~Transaction();
+    Transaction *make_transaction(std::vector<u_int8_t> sender, std::vector<u_int8_t> receiver, unsigned long long value,
+                                  std::vector<uint8_t> message, std::vector<u_int8_t> signature, unsigned long nonce,
+                                  unsigned long long timestamp);
+    std::vector<uint8_t> sign_transaction(std::vector<uint8_t> message, std::vector<uint8_t> priv_key);
+    bool verify_transaction(Transaction *trx);
     //Getter's
 protected:
     std::vector<u_int8_t> get_sender();
