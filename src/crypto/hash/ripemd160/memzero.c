@@ -16,6 +16,11 @@
 #include <sys/param.h>
 #endif
 
+#ifdef __APPLE__
+#include <strings.h>
+#include <sys/param.h>
+#endif
+
 // C11's bounds-checking interface.
 #if defined(__STDC_LIB_EXT1__)
 #define HAVE_MEMSET_S 1

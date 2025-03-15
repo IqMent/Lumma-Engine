@@ -4,6 +4,7 @@
 
 #ifndef LUMMAENGINE_MEMZERO_H
 #define LUMMAENGINE_MEMZERO_H
+
 extern "C" {
 #include <stddef.h>
 

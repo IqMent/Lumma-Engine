@@ -48,7 +48,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 
     add_executable(${PROJECT_NAME} ${SRC})
     target_include_directories(${PROJECT_NAME} PRIVATE ${libsodium_INCLUDE_DIRS})
-    target_link_libraries(${PROJECT_NAME} OpenSSL::Crypto ${libsodium_LIBRARIES})
+    target_link_libraries(${PROJECT_NAME} OpenSSL::Crypto ${libsodium_LIBRARIES} LummaEngineHash secp256k1 LummaEngineKeyED25519)
 endif ()
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")

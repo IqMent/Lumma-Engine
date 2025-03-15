@@ -18,7 +18,6 @@
 
 int main()
 {
-
     Crypto::SHA256 sha256;
     std::string str = "Hello World!";
     std::vector<uint8_t> result = sha256.make_sha256(&str);

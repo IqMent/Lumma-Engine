@@ -9,9 +9,9 @@ set(SRC
         sha512/fixedint.h
         sha512/sha512.cpp
         sha512/sha512.h
-        ripemd160/ripemd160.cpp
+        RIPEMD160/memzero.c
         ripemd160/memzero.h
-        ripemd160/memzero.cpp
+        ripemd160/ripemd160.cpp
         ripemd160/Lripemd160.cpp
 )
 
