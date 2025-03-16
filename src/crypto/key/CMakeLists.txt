@@ -12,6 +12,7 @@ set(SRC
         ed25519/sha512.c
         ed25519/sign.c
         ed25519/verify.c
+        randb.cpp
 )
 add_subdirectory(secp256k1)
 
