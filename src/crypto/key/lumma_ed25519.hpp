@@ -17,6 +17,7 @@
 #include <fstream>
 
 #define MOD(A) ((A) * (A)) // x^2 = a (mod p).  Then x is a square root.
+#define CONSTANT
 
 typedef struct{
     unsigned char seed[32];
@@ -27,9 +28,12 @@ namespace Crypto{
     class ED25519{
     public:
         unsigned char *get_random_bytes();
+        unsigned char *generate_keypair(unsigned char *seed);
+        unsigned char *generate_keypair();
 
     private:
         unsigned char *get_randb();
+        unsigned char *secret_to_pub(unsigned char *secret);
     };
 }
 

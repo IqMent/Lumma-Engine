@@ -152,4 +152,5 @@ if __name__ == '__main__':
     seed = bytes.fromhex(seed_hex)
 
     public_key = secret_to_public(seed)
-    print("Public (hex):", public_key.hex())
+    print(f"PrivateKey (hex):   {seed_hex}{public_key.hex()}")
+    print("Public (hex):      ", public_key.hex())
