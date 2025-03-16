@@ -113,53 +113,60 @@
 
 #include "crypto/key/lumma_ed25519.hpp"
 
-int main() {
-    unsigned char public_key[32], private_key[64], seed[32], scalar[32];
-    unsigned char other_public_key[32], other_private_key[64];
-    unsigned char shared_secret[32], other_shared_secret[32];
-    unsigned char signature[64];
+//int main() {
+//    unsigned char public_key[32], private_key[64], seed[32], scalar[32];
+//    unsigned char other_public_key[32], other_private_key[64];
+//    unsigned char shared_secret[32], other_shared_secret[32];
+//    unsigned char signature[64];
+//
+//    clock_t start;
+//    clock_t end;
+//    int i;
+//
+//    const unsigned char message[] = "Hello, world!";
+//    const int message_len = strlen((char *) message);
+//
+//    /* create a random seed, and a keypair out of that seed */
+//    ed25519_create_seed(seed);
+//    ed25519_create_keypair(public_key, private_key, seed);
+//    printf("Seed: \n");
+//    for (auto i=0;i<32;i++)
+//        //printf("%d", seed[i]);
+//        printf("%02x", seed[i]);
+//    printf("\nPrivate key ed22519: \n");
+//    for (auto i=0; i<64; i++)
+//        printf("%02x", private_key[i]);
+//    printf("\nPublic key ed22519: \n");
+//    for (auto i=0; i< 32; i++)
+//        printf("%02x", public_key[i]);
+//    crypto_sign_ed25519_seed_keypair(public_key, private_key, seed);
+//
+//    std::cout << std::endl;
+//    std::cout << "Private key (ed25519): \n";
+//    for (int i = 0; i < crypto_sign_SECRETKEYBYTES; i++) {
+//        printf("%02x", private_key[i]);
+//    }
+//    std::cout << std::endl;
+//
+//    std::cout << "Public key (ed25519): \n";
+//    for (int i = 0; i < crypto_sign_PUBLICKEYBYTES; i++) {
+//        printf("%02x", public_key[i]);
+//    }
+//    std::cout << std::endl;
+//    Crypto::ED25519 ed25519;
+//
+//    printf("\n\nMy version of rand bytes: \n");
+//    unsigned char *rndb;
+//    rndb = ed25519.get_random_bytes();
+//    for (size_t i=0 ;i<32; i++)
+//        printf("%d", rndb[i]);
+//    printf("\n");
+//    return 0;
+//}
 
-    clock_t start;
-    clock_t end;
-    int i;
+#include "Lspace/Lspace.hpp"
 
-    const unsigned char message[] = "Hello, world!";
-    const int message_len = strlen((char *) message);
-
-    /* create a random seed, and a keypair out of that seed */
-    ed25519_create_seed(seed);
-    ed25519_create_keypair(public_key, private_key, seed);
-    printf("Seed: \n");
-    for (auto i=0;i<32;i++)
-        //printf("%d", seed[i]);
-        printf("%02x", seed[i]);
-    printf("\nPrivate key ed22519: \n");
-    for (auto i=0; i<64; i++)
-        printf("%02x", private_key[i]);
-    printf("\nPublic key ed22519: \n");
-    for (auto i=0; i< 32; i++)
-        printf("%02x", public_key[i]);
-    crypto_sign_ed25519_seed_keypair(public_key, private_key, seed);
-
-    std::cout << std::endl;
-    std::cout << "Private key (ed25519): \n";
-    for (int i = 0; i < crypto_sign_SECRETKEYBYTES; i++) {
-        printf("%02x", private_key[i]);
-    }
-    std::cout << std::endl;
-
-    std::cout << "Public key (ed25519): \n";
-    for (int i = 0; i < crypto_sign_PUBLICKEYBYTES; i++) {
-        printf("%02x", public_key[i]);
-    }
-    std::cout << std::endl;
-    Crypto::ED25519 ed25519;
-
-    printf("\n\nMy version of rand bytes: \n");
-    unsigned char *rndb;
-    rndb = ed25519.get_random_bytes();
-    for (size_t i=0 ;i<32; i++)
-        printf("%d", rndb[i]);
-    printf("\n");
-    return 0;
+int main(){
+    Lspace::init();
+    return (0);
 }

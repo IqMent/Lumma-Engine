@@ -14,9 +14,16 @@
 #include <unordered_map>
 
 
+typedef struct{
+    std::vector<uint8_t> pubKey;
+    std::vector<uint8_t> priKey;
+    std::unordered_map<std::string, std::vector<uint8_t>> keys;
+}   KeyPair;
+
 namespace Crypto{
     class evp_SHA256{
-        std::vector<uint8_t> sha256(std::vector<uint8_t> data);
+        std::vector<uint8_t> vector_sha256(std::vector<uint8_t> data);
+        unsigned char *sha256(const std::vector<uint8_t> data);
     };
 
     class evp_SHA512{

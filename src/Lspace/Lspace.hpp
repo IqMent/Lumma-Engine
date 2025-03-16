@@ -5,8 +5,13 @@
 #ifndef LUMMAENGINE_LSPACE_HPP
 #define LUMMAENGINE_LSPACE_HPP
 
+#include <fstream>
+#include <filesystem>
+
 
 class Lspace {
+public:
+    static int init();
 
 };
 
