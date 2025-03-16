@@ -39,6 +39,15 @@ typedef struct{
     
 }   genesis_trx;
 
+typedef struct{
+    unsigned short version;
+    unsigned char trx_hash[32] = {
+    };
+    unsigned char receiver[32] = {
+    };
+    unsigned long long value = 66000000ULL;
+}   genesis_coinbase_trx;
+
 class GenesisBlock{
 private:
     const unsigned char blockHash[32] = {0x00};
