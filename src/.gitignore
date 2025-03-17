@@ -3,3 +3,5 @@ build/*
 
 src/crypto/key/secp256k1/build
 src/crypto/key/secp256k1/build/*
+src/crypto/key/secp256k1
+src/crypto/key/ed25519
