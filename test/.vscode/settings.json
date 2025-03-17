@@ -1,9 +1,0 @@
-{
-	"files.associations": {
-		"*.sqlbook": "sql",
-		"*.ndjson": "jsonl",
-		"*.dbclient-js": "javascript",
-		"sha.h": "c",
-		"ec_local.h": "c"
-	}
-}
