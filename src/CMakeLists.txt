@@ -22,6 +22,7 @@ set(SRC
         network/http/HTTP.cpp
         network/http/HTTP.h
         logger/logger.h
+        genesis_block.cpp
 )
 
 add_subdirectory(crypto/)
