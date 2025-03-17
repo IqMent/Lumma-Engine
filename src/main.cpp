@@ -4,11 +4,11 @@
 #include <iostream>
 #include <string>
 #include <cassert>
-#include "crypto/hash/sha256/sha256.h"
+//#include "crypto/hash/sha256/sha256.h"
 #include <vector>
 #include <iomanip>
 #include <cstring>
-#include "crypto/hash/sha512/sha512.h"
+//#include "crypto/hash/sha512/sha512.h"
 #include "crypto/key/secp256k1/include/secp256k1.h"
 #include "crypto/key/secp256k1/include/secp256k1_extrakeys.h"
 #include "crypto//key/secp256k1/include/secp256k1_ecdh.h"
@@ -165,8 +165,34 @@
 //}
 
 #include "Lspace/Lspace.hpp"
+#include "block/genesis_block.h"
+#include "crypto/evp/evp.hpp"
+#include "address/address.h"
 
 int main(){
     Lspace::init();
+    GenesisBlock genesisBlock;
+    //unsigned char address[32];
+    unsigned char pk[32];
+    unsigned char sk[64];
+
+    crypto_sign_ed25519_keypair(pk, sk);
+    std::cout << "Private key (ed25519): \n";
+    for (int i = 0; i < crypto_sign_SECRETKEYBYTES; i++) {
+        printf("%02x", sk[i]);
+    }
+    std::cout << "\n\nPublic key (ed25519): \n";
+    for (int i = 0; i < crypto_sign_PUBLICKEYBYTES; i++){
+        printf("%02x", pk[i]);
+    }
+    std::cout << std::endl;
+    std::cout << "Address: " << std::endl;
+    unsigned char data[] = { 0x86, 0xb5, 0x20, 0xbe, 0x86, 0x67, 0x94, 0x78, 0x15, 0x36, 0xbf, 0x41, 0x6d, 0x9d, 0x11, 0x4f, 0x7f, 0x1e, 0xe1, 0x93, 0x67, 0x8a, 0x71, 0x9d, 0x4b, 0x42, 0xc4, 0x57, 0x02, 0xa1, 0xa1, 0x75 };
+
+    auto address = Address::Stage0::get_address_from_bn(data);
+
+    for (size_t i=0; i<32; i++)
+        printf("%02x", address[i]);
+    std::cout << std::endl;
     return (0);
 }

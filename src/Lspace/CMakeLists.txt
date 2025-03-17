@@ -3,6 +3,7 @@ project(LummaEngineLspace)
 
 set(SRC
         Lspace.cpp
+        keys/keys.cpp
 )
 
 

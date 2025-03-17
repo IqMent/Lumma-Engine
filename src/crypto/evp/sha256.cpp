@@ -13,3 +13,11 @@ unsigned char *Crypto::evp_SHA256::sha256(std::vector<uint8_t> data) {
     return hash;
 }
 
+unsigned char *Crypto::evp_SHA256::sha256(const unsigned char *pk) {
+    unsigned char *hash = new unsigned char[SHA256_DIGEST_LENGTH];
+    SHA256_CTX ctx;
+    SHA256_Init(&ctx);
+    SHA256_Update(&ctx, pk, 32);
+    SHA256_Final(hash, &ctx);
+    return hash;
+}

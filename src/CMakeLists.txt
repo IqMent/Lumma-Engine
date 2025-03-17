@@ -22,13 +22,11 @@ set(SRC
         network/http/HTTP.cpp
         network/http/HTTP.h
         logger/logger.h
-        crypto/evp/sha256.cpp
-        crypto/evp/ed25519.cpp
-        crypto/evp/sha512.cpp
 )
 
 add_subdirectory(crypto/)
 add_subdirectory(Lspace/)
+add_subdirectory(address/)
 set(CMAKE_CXX_STANDARD 17)
 if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
 #    set(SODIUM_ROOT_DIR "/usr/local/opt/libsodium")
@@ -65,7 +63,7 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     #target_link_directories(${PROJECT_NAME} PRIVATE ${SODIUM_DIR})
     target_include_directories(${PROJECT_NAME} PRIVATE ${SODIUM_DIR})
     target_link_libraries(${PROJECT_NAME} OpenSSL::Crypto LummaEngineHash secp256k1 LummaEngineKeyED25519 "/usr/local/lib/libsodium.a"
-    LummaEngineLspace)
+    LummaEngineLspace LummaEngineCryptoEVP LummaEngineAddress)
     #target_link_libraries(LummaEngineHash)
 
 endif ()

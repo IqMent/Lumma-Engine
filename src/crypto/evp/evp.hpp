@@ -1,7 +1,7 @@
 //
 // Created by IqMent on 16.03.2025.
 //
-
+#pragma once
 #ifndef LUMMAENGINE_EVP_HPP
 #define LUMMAENGINE_EVP_HPP
 
@@ -22,12 +22,19 @@ typedef struct{
 
 namespace Crypto{
     class evp_SHA256{
+    public:
         std::vector<uint8_t> vector_sha256(std::vector<uint8_t> data);
         unsigned char *sha256(const std::vector<uint8_t> data);
+        unsigned char *sha256(const unsigned char *pk);
     };
 
     class evp_SHA512{
         std::vector<uint8_t> sha512(std::vector<uint8_t> data);
+    };
+
+    class evp_KECCAK256{
+    public:
+        unsigned char * keccak256(unsigned char *sha256);
     };
 
     class evp_ED25519{
