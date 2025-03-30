@@ -3,8 +3,19 @@
 //
 
 #include "../Lspace.hpp"
+#ifdef __APPLE__
+#include <cstdlib>
+#endif
 
-int Lspace::save_key_pair_ed25519(unsigned char *address, unsigned char *public_key, unsigned char *private_key) {
+int Lspace::save_key_pair_ed25519(unsigned char *address, unsigned char *public_key, unsigned char *private_key){
+#ifdef __APPLE__
+    const char * home = std::getenv("HOME");
+    std::string base_path = std::string(home) + "/.LummaEngine/keys";
+    std::stringstream ss_address;
+
+
+#endif
+#ifndef __APPLE__
     std::filesystem::path base_path = std::filesystem::path(std::getenv("HOME")) / ".LummaEngine" / "keys";
     std::stringstream ss_address;
     for (size_t i=0; i<32; i++){
@@ -25,5 +36,7 @@ int Lspace::save_key_pair_ed25519(unsigned char *address, unsigned char *public_
     std::ofstream private_key_file(base_path / ss_address.str() / "private_key.bin", std::ios::binary);
     private_key_file.write((char *)private_key, 64);
     private_key_file.close();
+#endif
+
     return (0);
 }

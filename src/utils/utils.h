@@ -7,6 +7,9 @@
 #include <cstdint>
 #include <string>
 #include <vector>
+#include <fstream>
+
+
 
 namespace Utils{
     class BinaryConvertor{
@@ -22,6 +25,11 @@ namespace Utils{
         std::vector<uint8_t> ul_2_bn(unsigned long data);
         std::vector<uint8_t> ll_2_bn(long long data);
         std::vector<uint8_t> l_2_bn(long data);
+    };
+    class Reader{
+    public:
+        std::vector<uint8_t> readECseckey(const std::string path);
+        std::vector<uint8_t> readECpubkey(const std::string path);
     };
 }
 

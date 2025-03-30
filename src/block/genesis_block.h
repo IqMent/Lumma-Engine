@@ -9,6 +9,14 @@
 #include <vector>
 #include <iostream>
 #include <iomanip>
+#include <memory>
+#include <cstring>
+
+inline std::unique_ptr<unsigned char []>get_zero(size_t size){
+    std::unique_ptr<unsigned char []> zero(new unsigned char[size]);
+    std::memset(zero.get(), 0x00, size);
+    return zero;
+}
 
 typedef struct{
     unsigned short version = 1;
@@ -21,7 +29,9 @@ typedef struct{
             0x00, 0x00, 0x00, 0x00, 0x00,
             0x00
     };
-    unsigned char trx_hash[32] = {};
+    unsigned char trx_hash[32] = {
+
+    };
 
     unsigned char sender[32] = {
             0x00, 0x00, 0x00, 0x00, 0x00,
@@ -39,6 +49,10 @@ typedef struct{
             0xe9, 0xba, 0x55
     };
     unsigned long long value = 66000000000ULL;
+
+    unsigned char signature[64] = {
+
+    };
     
 }   genesis_trx;
 
