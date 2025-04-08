@@ -36,6 +36,16 @@ namespace Crypto{
         unsigned char * keccak256(unsigned char *sha256);
     };
 
+    class evp_Blake2b{
+    public:
+        unsigned char *blake2b(unsigned char *data, size_t data_size);
+    };
+
+    class evp_RIPEMD160{
+    public:
+        unsigned char *ripemd160(unsigned char *data, size_t data_size);
+    };
+
     class evp_ED25519{
         std::unordered_map<std::string, std::vector<uint8_t> > generate_keys();
         std::vector<uint8_t> sign(std::vector<uint8_t> message, std::vector<uint8_t> sk);

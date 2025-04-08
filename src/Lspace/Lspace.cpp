@@ -4,6 +4,34 @@
 
 #include "Lspace.hpp"
 #include <iostream>
+#include <sys/stat.h>
+
+using std::string;
+using std::stringstream;
+
+bool Lspace::is_folder_exists(std::string path) {
+#ifdef __APPLE__
+    struct stat info;
+    return (stat(path.c_str(), &info) == 0 && S_ISDIR(info.st_mode));
+#endif
+#ifdef __linux__
+    return true;
+#endif
+#ifdef __WIN32__
+    return true;
+#endif
+}
+
+
+void Lspace::check_and_create(std::string path) {
+    size_t current_pos = path.size();
+    std::string current_folder;
+    char *folder_ptr;
+    // /home/bla1/bla2/bla3
+    while (current_pos > 0){
+
+    }
+}
 
 int Lspace::init() {
 #ifdef __APPLE__

@@ -11,20 +11,27 @@
 
 #include "../crypto/evp/evp.hpp"
 
-#define PREFIX 0x6c
-#define ENDFIX 0x61
+#define ADDRESS_PREFIX 0x0
 
+// Address generation:
+// Sha256(PK) -> Blake2b() -> RIPEMD160() -> BXa
+// Bxa -------> version + network + prefix + address + checksum
 namespace Address{
     class Stage0{
     public:
         static std::string get_address_from_bn(std::vector<u_int8_t> bn_address);
         static std::vector<u_int8_t> get_address_from_str(std::string str_address);
         static std::vector<u_int8_t> get_address_from_bn(unsigned char *pk);
+        static std::unique_ptr<std::vector<unsigned char []> > make_address(const unsigned char *pk,
+                                                                            size_t pk_size);
     };
 
-    class Stage1{
-
+    class Address{
+    public:
+        static std::vector<unsigned char> make_address(const unsigned char *pk,
+                                                                    size_t pk_size);
     };
+
 }
 
 

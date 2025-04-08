@@ -18,3 +18,9 @@ std::vector<u_int8_t> Address::Stage0::get_address_from_bn(unsigned char *pk) {
     delete keccak256_address;
     return address;
 }
+
+std::vector<unsigned char> Address::Address::make_address(const unsigned char *pk, size_t pk_size) {
+    std::vector<unsigned char> *address;
+
+
+}
