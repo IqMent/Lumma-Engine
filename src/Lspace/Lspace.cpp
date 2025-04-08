@@ -6,6 +6,13 @@
 #include <iostream>
 
 int Lspace::init() {
+#ifdef __APPLE__
+    std::string base_path = std::getenv("HOME");
+    base_path += "/.LummaEngine";
+    std::string keys_path = base_path + "/keys";
+
+
+#endif
 #ifdef __linux__
 
     std::filesystem::path base_path = std::filesystem::path(std::getenv("HOME")) /  ".LummaEngine";

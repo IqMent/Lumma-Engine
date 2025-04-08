@@ -13,11 +13,10 @@
 #include <string>
 #include <unordered_map>
 
-
 typedef struct{
     std::vector<uint8_t> pubKey;
     std::vector<uint8_t> priKey;
-    std::unordered_map<std::string, std::vector<uint8_t>> keys;
+    std::unordered_map<std::string, std::vector<uint8_t> > keys;
 }   KeyPair;
 
 namespace Crypto{
@@ -38,7 +37,7 @@ namespace Crypto{
     };
 
     class evp_ED25519{
-        std::unordered_map<std::string, std::vector<uint8_t>> generate_keys();
+        std::unordered_map<std::string, std::vector<uint8_t> > generate_keys();
         std::vector<uint8_t> sign(std::vector<uint8_t> message, std::vector<uint8_t> sk);
         bool verify(std::vector<uint8_t> data, std::vector<uint8_t> pk);
     };

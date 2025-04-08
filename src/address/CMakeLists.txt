@@ -4,6 +4,8 @@ project(LummaEngineAddress)
 
 set(SRC
         address.cpp
+        BXa.cpp
+        BXa.hpp
 )
 
 add_library(${PROJECT_NAME} ${SRC})

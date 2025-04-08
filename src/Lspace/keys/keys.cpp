@@ -1,21 +1,27 @@
 //
 // Created by iqment on 3/17/25.
 //
-
 #include "../Lspace.hpp"
 #ifdef __APPLE__
 #include <cstdlib>
 #endif
+
+static void fill_string(std::stringstream &str, unsigned char *data, size_t size){
+    for (size_t i=0; i<size; i++){
+        str << std::hex << std::setfill('0') << std::setw(2) << (int)data[i];
+    }
+}
 
 int Lspace::save_key_pair_ed25519(unsigned char *address, unsigned char *public_key, unsigned char *private_key){
 #ifdef __APPLE__
     const char * home = std::getenv("HOME");
     std::string base_path = std::string(home) + "/.LummaEngine/keys";
     std::stringstream ss_address;
+    
 
 
 #endif
-#ifndef __APPLE__
+#ifdef __linux__
     std::filesystem::path base_path = std::filesystem::path(std::getenv("HOME")) / ".LummaEngine" / "keys";
     std::stringstream ss_address;
     for (size_t i=0; i<32; i++){

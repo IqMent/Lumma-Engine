@@ -25,6 +25,12 @@ set(SRC
         genesis_block.cpp
 )
 
+set(HEADERS
+        address/BXa.hpp
+        base58.h
+        base64.h
+)
+
 add_subdirectory(crypto/)
 add_subdirectory(Lspace/)
 add_subdirectory(address/)
